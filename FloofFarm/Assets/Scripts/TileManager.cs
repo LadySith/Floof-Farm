@@ -12,6 +12,7 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile seedlingTile;
     [SerializeField] private Tile plantTile;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class TileManager : MonoBehaviour
                 interactableMap.SetTile(position, hiddenInteractableTile);
             }
         }
+
     }
 
     public bool IsInteractable(Vector3Int position)

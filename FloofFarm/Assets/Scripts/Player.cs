@@ -11,12 +11,14 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int position = GameManager.instance.tileManager.interactableMap.WorldToCell(pos);
+            Vector3 mousePos = new Vector3(pos.x, pos.y, 0);
+            Vector3Int mousePosition = GameManager.instance.tileManager.interactableMap.WorldToCell(pos);
+            Vector3 playerPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-            if (GameManager.instance.tileManager.IsInteractable(position))
+            if (GameManager.instance.tileManager.IsInteractable(mousePosition) && (mousePos - playerPosition).magnitude < 1.25)
             {
-                GameManager.instance.tileManager.SetInteracted(position);
-                GameManager.instance.tileManager.growPlant(position);
+                GameManager.instance.tileManager.SetInteracted(mousePosition);
+                GameManager.instance.tileManager.growPlant(mousePosition);
             }
         }
     }

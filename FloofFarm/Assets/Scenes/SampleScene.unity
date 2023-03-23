@@ -1754,9 +1754,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableMap: {fileID: 1623926470}
   hiddenInteractableTile: {fileID: 11400000, guid: 167ead5909471b648bff2f047dd2ce76, type: 2}
-  interactedTile: {fileID: 11400000, guid: ef6f7d9b1ff64f7468fc0bb8d3462f2d, type: 2}
-  sproutTile: {fileID: 11400000, guid: d3e801a4352c5944c8d7721831c64af6, type: 2}
-  seedlingTile: {fileID: 11400000, guid: abd5ab43240459b4ea765f72f8d4cc43, type: 2}
+  interactedTile: {fileID: 11400000, guid: d3e801a4352c5944c8d7721831c64af6, type: 2}
+  sproutTile: {fileID: 11400000, guid: 7d59069d43586f04bbe421d131a16794, type: 2}
+  seedlingTile: {fileID: 11400000, guid: a051d8a553cdbee4f8df343ad24f629b, type: 2}
   plantTile: {fileID: 11400000, guid: 67c5c26bcf67777429a0b3be07c6b53a, type: 2}
 --- !u!114 &702616848
 MonoBehaviour:
@@ -12259,7 +12259,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7840621227296017202, guid: 53e74edb90792a248bda73cac595c32b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12941,13 +12941,13 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!4 &1623926472
@@ -13047,7 +13047,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5095911681907235199, guid: 53e74edb90792a248bda73cac595c32b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
