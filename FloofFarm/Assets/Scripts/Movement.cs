@@ -8,17 +8,24 @@ public class Movement : MonoBehaviour
 
     public Animator animator;
 
+    private Vector3 direction;
+
     // Update is called once per frame
     private void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 direction = new Vector3(horizontal, vertical);
+        direction = new Vector3(horizontal, vertical);
 
         AnimateMovement(direction);
 
-        transform.position += direction * speed * Time.deltaTime;
+        
+    }
+
+    private void FixedUpdate()
+    {
+        transform.position += direction.normalized * speed * Time.deltaTime;
     }
 
     void AnimateMovement(Vector3 direction)
