@@ -9,7 +9,7 @@ public class Collectible : MonoBehaviour
     {
         Player player = collision.GetComponent<Player>();
 
-        if (player)
+        if (player && player.itemsHeld.Count < player.maxItems)
         {
             player.itemsHeld.Add(this);
             gameObject.transform.GetChild(0).gameObject.SetActive(false);

@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public float actionRadius;
     public int selectedItem;
+    public int maxItems;
     public List<Collectible> itemsHeld = new List<Collectible>();
 
     private void Update()
