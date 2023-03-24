@@ -13,6 +13,7 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile plantTile;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,23 +41,7 @@ public class TileManager : MonoBehaviour
         return false;
     }
 
-    public void SetInteracted(Vector3Int position)
-    {
-        interactableMap.SetTile(position, interactedTile);
-    }
+    
 
-    public void growPlant(Vector3Int position)
-    {
-        StartCoroutine(plantGrowing(position));
-    }
-
-    IEnumerator plantGrowing(Vector3Int position)
-    {
-        yield return new WaitForSeconds(10f);
-        interactableMap.SetTile(position, sproutTile);
-        yield return new WaitForSeconds(10f);
-        interactableMap.SetTile(position, seedlingTile);
-        yield return new WaitForSeconds(10f);
-        interactableMap.SetTile(position, plantTile);
-    }
+    
 }

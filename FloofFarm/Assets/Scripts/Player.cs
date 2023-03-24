@@ -20,19 +20,18 @@ public class Player : MonoBehaviour
 
             if (GameManager.instance.tileManager.IsInteractable(mousePosition) && (mousePos - playerPosition).magnitude < actionRadius)
             {
-                plantMushroom(mousePosition);
+                plantSeed(mousePosition);
             }
         }
     }
 
-    private void plantMushroom(Vector3Int position)
+    private void plantSeed(Vector3Int position)
     {
         if (selectedItem < itemsHeld.Count)
         {
-            if (itemsHeld[selectedItem] != null)
+            if (itemsHeld[selectedItem] != null && itemsHeld[selectedItem].type == CollectibleType.SEED)
             {
-                GameManager.instance.tileManager.SetInteracted(position);
-                GameManager.instance.tileManager.growPlant(position);
+                itemsHeld[selectedItem].growPlant(position);
                 itemsHeld.RemoveAt(selectedItem);
             }
         }
