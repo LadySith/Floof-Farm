@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public List<Collectible> itemsHeld = new List<Collectible>();
+    public float actionRadius;
     public int selectedItem;
+    public List<Collectible> itemsHeld = new List<Collectible>();
 
     private void Update()
     {
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
             Vector3Int mousePosition = GameManager.instance.tileManager.interactableMap.WorldToCell(pos);
             Vector3 playerPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-            if (GameManager.instance.tileManager.IsInteractable(mousePosition) && (mousePos - playerPosition).magnitude < 1.25)
+            if (GameManager.instance.tileManager.IsInteractable(mousePosition) && (mousePos - playerPosition).magnitude < actionRadius)
             {
                 GameManager.instance.tileManager.SetInteracted(mousePosition);
                 GameManager.instance.tileManager.growPlant(mousePosition);
