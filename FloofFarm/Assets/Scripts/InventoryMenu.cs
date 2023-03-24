@@ -16,10 +16,24 @@ public class InventoryMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < player.itemsHeld.Count; i++){
+        for (int i = 0; i < player.maxItems; i++){
+
             GameObject child = gameObject.transform.GetChild(i).gameObject;
-            child.GetComponent<Image>().sprite = player.itemsHeld[i].transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite;
-            child.SetActive(true);
+
+            if (i < player.itemsHeld.Count)
+            {
+                if (player.itemsHeld[i] != null)
+                {
+                    GameObject inventoryItem = player.itemsHeld[i].transform.GetChild(0).gameObject;
+                    child.GetComponent<Image>().sprite = inventoryItem.GetComponent<SpriteRenderer>().sprite;
+                    child.SetActive(true);
+                }
+            }
+
+            else
+            {
+                child.SetActive(false);
+            }
         }
     }
 

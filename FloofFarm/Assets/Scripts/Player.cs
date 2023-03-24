@@ -20,8 +20,20 @@ public class Player : MonoBehaviour
 
             if (GameManager.instance.tileManager.IsInteractable(mousePosition) && (mousePos - playerPosition).magnitude < actionRadius)
             {
-                GameManager.instance.tileManager.SetInteracted(mousePosition);
-                GameManager.instance.tileManager.growPlant(mousePosition);
+                plantMushroom(mousePosition);
+            }
+        }
+    }
+
+    private void plantMushroom(Vector3Int position)
+    {
+        if (selectedItem < itemsHeld.Count)
+        {
+            if (itemsHeld[selectedItem] != null)
+            {
+                GameManager.instance.tileManager.SetInteracted(position);
+                GameManager.instance.tileManager.growPlant(position);
+                itemsHeld.RemoveAt(selectedItem);
             }
         }
     }
