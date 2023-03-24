@@ -10,8 +10,9 @@ public class Collectible : MonoBehaviour
 
         if (player)
         {
-            player.itemsHeld++;
-            Destroy(this.gameObject);
+            player.itemsHeld.Add(this);
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            GetComponent<Collider2D>().enabled = false;
         }
     }
 }
