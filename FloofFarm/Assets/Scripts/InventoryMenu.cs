@@ -22,4 +22,9 @@ public class InventoryMenu : MonoBehaviour
             child.SetActive(true);
         }
     }
+
+    public void SelectItem(int index){
+        player.selectedItem = index;
+        print(player.selectedItem.ToString());
+    }
 }
