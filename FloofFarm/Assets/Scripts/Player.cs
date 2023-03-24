@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int itemsHeld;
+    public List<Collectible> itemsHeld = new List<Collectible>();
 
     private void Update()
     {
