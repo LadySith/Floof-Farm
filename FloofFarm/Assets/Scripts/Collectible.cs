@@ -7,40 +7,32 @@ public class Collectible : MonoBehaviour
 {
     public CollectibleType type;
 
-    public Tile sproutTile;
-    public Tile seedlingTile;
-    public Tile plantTile;
-    public Tile floofTile;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponent<Player>();
 
-        if (player && player.itemsHeld.Count < player.maxItems)
+        if (player && player.itemsHeld.Count < player.maxItems && type != CollectibleType.FLOOF)
         {
             player.itemsHeld.Add(this);
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             GetComponent<Collider2D>().enabled = false;
+
+            if (type == CollectibleType.SEED)
+            {
+                type = CollectibleType.FLOOF;
+            }
         }
     }
 
-    public void growPlant(Vector3Int position)
+    public virtual void growPlant(Vector3Int position)
     {
-        GameManager.instance.tileManager.interactableMap.SetTile(position, sproutTile);
-        StartCoroutine(plantGrowing(position));
+        //GameManager.instance.tileManager.interactableMap.SetTile(position, sproutTile);
+        //StartCoroutine(plantGrowing(position));
     }
 
-    IEnumerator plantGrowing(Vector3Int position)
-    {
-        yield return new WaitForSeconds(10f);
-        GameManager.instance.tileManager.interactableMap.SetTile(position, seedlingTile);
-        yield return new WaitForSeconds(10f);
-        GameManager.instance.tileManager.interactableMap.SetTile(position, plantTile);
-        yield return new WaitForSeconds(10f);
-        GameManager.instance.tileManager.interactableMap.SetTile(position, floofTile);
-    }
 }
 
 public enum CollectibleType
 {
-    NONE, DEWDROP, SEED
+    NONE, DEWDROP, SEED, FLOOF
 }

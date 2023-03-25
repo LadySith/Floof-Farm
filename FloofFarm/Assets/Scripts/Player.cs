@@ -11,29 +11,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 mousePos = new Vector3(pos.x, pos.y, 0);
-            Vector3Int mousePosition = GameManager.instance.tileManager.interactableMap.WorldToCell(pos);
-            Vector3 playerPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-            if (GameManager.instance.tileManager.IsInteractable(mousePosition) && (mousePos - playerPosition).magnitude < actionRadius)
-            {
-                plantSeed(mousePosition);
-            }
-        }
+        
     }
 
-    private void plantSeed(Vector3Int position)
-    {
-        if (selectedItem < itemsHeld.Count)
-        {
-            if (itemsHeld[selectedItem] != null && itemsHeld[selectedItem].type == CollectibleType.SEED)
-            {
-                itemsHeld[selectedItem].growPlant(position);
-                itemsHeld.RemoveAt(selectedItem);
-            }
-        }
-    }
 }
