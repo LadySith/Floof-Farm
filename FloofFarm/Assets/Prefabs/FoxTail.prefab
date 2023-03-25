@@ -157,3 +157,4 @@ MonoBehaviour:
   sproutTile: {fileID: 11400000, guid: 4af68afe7f9082d49be86ef43c2c5ab5, type: 2}
   seedlingTile: {fileID: 11400000, guid: 773467f8046023243b3b0a2ab5fddb42, type: 2}
   plantTile: {fileID: 11400000, guid: 67d95bbc75ad7af4d82527ee9b925f25, type: 2}
+  floofTile: {fileID: 11400000, guid: 55e1e144ebaa4e14fa056e568b78bc1e, type: 2}
