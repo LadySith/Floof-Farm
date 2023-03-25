@@ -8,9 +8,6 @@ public class TileManager : MonoBehaviour
     public Tilemap interactableMap;
     [SerializeField] private Tile hiddenInteractableTile;
     [SerializeField] private Tile interactedTile;
-    [SerializeField] private Tile sproutTile;
-    [SerializeField] private Tile seedlingTile;
-    [SerializeField] private Tile plantTile;
 
 
 

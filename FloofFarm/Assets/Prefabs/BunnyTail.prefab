@@ -131,6 +131,7 @@ MonoBehaviour:
   sproutTile: {fileID: 11400000, guid: cf61863e39ed2e2469e969bdb370d402, type: 2}
   seedlingTile: {fileID: 11400000, guid: 1f49fe319bdb55e4586e41770171cc7b, type: 2}
   plantTile: {fileID: 11400000, guid: dc89b46e2461de04397dec9517e5566d, type: 2}
+  floofTile: {fileID: 11400000, guid: 75e595b935c208649be9e96fa57830b2, type: 2}
 --- !u!61 &1331620244642919557
 BoxCollider2D:
   m_ObjectHideFlags: 0

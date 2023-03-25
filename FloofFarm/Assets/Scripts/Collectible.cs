@@ -10,6 +10,7 @@ public class Collectible : MonoBehaviour
     public Tile sproutTile;
     public Tile seedlingTile;
     public Tile plantTile;
+    public Tile floofTile;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponent<Player>();
@@ -34,10 +35,12 @@ public class Collectible : MonoBehaviour
         GameManager.instance.tileManager.interactableMap.SetTile(position, seedlingTile);
         yield return new WaitForSeconds(10f);
         GameManager.instance.tileManager.interactableMap.SetTile(position, plantTile);
+        yield return new WaitForSeconds(10f);
+        GameManager.instance.tileManager.interactableMap.SetTile(position, floofTile);
     }
 }
 
 public enum CollectibleType
 {
-    NONE, MUSHROOM, SEED
+    NONE, DEWDROP, SEED
 }
