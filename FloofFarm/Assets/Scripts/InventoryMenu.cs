@@ -39,6 +39,5 @@ public class InventoryMenu : MonoBehaviour
 
     public void SelectItem(int index){
         player.selectedItem = index;
-        print(player.selectedItem.ToString());
     }
 }
