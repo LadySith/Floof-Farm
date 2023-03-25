@@ -1506,7 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bc011030200204780c61cd0645ddcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionRadius: 1.25
+  actionRadius: 1.4
   selectedItem: 0
   maxItems: 10
   itemsHeld: []

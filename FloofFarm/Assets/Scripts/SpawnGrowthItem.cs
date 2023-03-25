@@ -14,7 +14,7 @@ public class SpawnGrowthItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.Range(-10000, 10000) == 50){
+        if (Random.Range(-5000, 5000) == 50){
             GameObject growthItem = Instantiate(item) as GameObject;
             growthItem.transform.SetParent(GameObject.Find("Forest").transform, false);
             growthItem.transform.position = new Vector2(Random.Range(-6, 6), Random.Range(-3, -1));

@@ -37,6 +37,7 @@ public class Floof : Collectible
             {
                 player.itemsHeld.RemoveAt(player.selectedItem);
                 StartCoroutine(growFloof());
+                growing = true;
             }
         }
         
@@ -53,7 +54,6 @@ public class Floof : Collectible
             Vector3 pos = GameManager.instance.tileManager.interactableMap.GetCellCenterLocal(position);
             Floof newFloof = Instantiate(this, pos, Quaternion.identity);
             newFloof.type = CollectibleType.FLOOF;
-            StartCoroutine(growFloof());
             player.itemsHeld.RemoveAt(player.selectedItem);
         }
     }
@@ -70,6 +70,7 @@ public class Floof : Collectible
 
     private void harvestFloof()
     {
+        GameManager.instance.tileManager.removePlantedTile(this.transform.position);
         growing = false;
         type = CollectibleType.FLOOF;
         player.itemsHeld.Add(this);

@@ -39,9 +39,10 @@ public class GameManager : MonoBehaviour
             {
                 Collectible item = player.itemsHeld[player.selectedItem];
 
-                if (item.type == CollectibleType.FLOOF)
+                if (item.type == CollectibleType.FLOOF && !tileManager.isPlantedTile(mousePosInt))
                 {
                     item.growPlant(mousePosInt);
+                    tileManager.addPlantedTile(mousePosInt);
                 }
                 
             }

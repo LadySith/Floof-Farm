@@ -24,11 +24,7 @@ public class Collectible : MonoBehaviour
         }
     }
 
-    public virtual void growPlant(Vector3Int position)
-    {
-        //GameManager.instance.tileManager.interactableMap.SetTile(position, sproutTile);
-        //StartCoroutine(plantGrowing(position));
-    }
+    public virtual void growPlant(Vector3Int position) { }
 
 }
 
