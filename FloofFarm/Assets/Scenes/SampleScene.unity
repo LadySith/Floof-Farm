@@ -2513,7 +2513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableMap: {fileID: 1623926470}
   hiddenInteractableTile: {fileID: 11400000, guid: 167ead5909471b648bff2f047dd2ce76, type: 2}
-  interactedTile: {fileID: 11400000, guid: d3e801a4352c5944c8d7721831c64af6, type: 2}
+  plantedTiles: []
 --- !u!114 &702616848
 MonoBehaviour:
   m_ObjectHideFlags: 0
