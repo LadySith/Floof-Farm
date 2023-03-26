@@ -58,7 +58,13 @@ public class TileManager : MonoBehaviour
 
         if (plantedTiles.Contains(posInt))
         {
-            plantedTiles.Remove(posInt);
+            StartCoroutine(WaitThenRemove(posInt));
         }
+    }
+
+    IEnumerator WaitThenRemove(Vector3Int position)
+    {
+        yield return new WaitForSeconds(0.1f);
+        plantedTiles.Remove(position);
     }
 }
