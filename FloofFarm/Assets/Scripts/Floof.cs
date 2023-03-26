@@ -31,11 +31,11 @@ public class Floof : Collectible
 
     private void OnMouseDown()
     {
-        if ((GameManager.instance.mousePosition - player.transform.position).magnitude < player.actionRadius)
+        if (player.canReach)
         {
-            if (growthStage == 0)
+            if (growthStage == 0 && player.itemsHeld.Count > 0 && player.selectedItem < player.itemsHeld.Count)
             {
-                if (player.itemsHeld.Count > 0 && player.itemsHeld[player.selectedItem] != null && player.itemsHeld[player.selectedItem].type == CollectibleType.DEWDROP && !growing)
+                if (player.itemsHeld[player.selectedItem].type == CollectibleType.DEWDROP && !growing)
                 {
                     player.itemsHeld.RemoveAt(player.selectedItem);
                     StartCoroutine(growFloof());
@@ -43,7 +43,7 @@ public class Floof : Collectible
                 }
             }
 
-            if (growthStage == 3 && player.itemsHeld.Count < 10)
+            if (growthStage == 3 && player.itemsHeld.Count < player.maxItems)
             {
                 harvestFloof();
             }

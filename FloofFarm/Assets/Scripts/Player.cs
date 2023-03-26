@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public int selectedItem;
     public int maxItems;
     public List<Collectible> itemsHeld = new List<Collectible>();
+    public bool canReach;
 
     private void Update()
     {

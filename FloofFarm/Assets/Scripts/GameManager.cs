@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public Vector3 posInWorld;
     public Vector3 mousePosition;
+    public Vector3Int mousePosInt;
 
     private void Awake()
     {
@@ -31,11 +32,12 @@ public class GameManager : MonoBehaviour
     {
         posInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition = new Vector3(posInWorld.x, posInWorld.y, 0);
-        Vector3Int mousePosInt = tileManager.interactableMap.WorldToCell(posInWorld);
+        mousePosInt = tileManager.interactableMap.WorldToCell(posInWorld);
+        player.canReach = (mousePosition - player.transform.position).magnitude < player.actionRadius;
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (tileManager.IsInteractable(mousePosInt) && (mousePosition - player.transform.position).magnitude < player.actionRadius && player.selectedItem < player.itemsHeld.Count)
+            if (tileManager.IsInteractable(mousePosInt) && player.canReach && player.selectedItem < player.itemsHeld.Count)
             {
                 Collectible item = player.itemsHeld[player.selectedItem];
 

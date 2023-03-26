@@ -23,12 +23,9 @@ public class HighlightTile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 mousePos = new Vector3(pos.x, pos.y, 0);
-        Vector3Int mousePosition = GameManager.instance.tileManager.interactableMap.WorldToCell(pos);
-        Vector3 playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+        Vector3Int mousePositionInt = GameManager.instance.mousePosInt;
 
-        if ((mousePos - playerPosition).magnitude < player.actionRadius)
+        if (player.canReach)
         {
             tileToSet = hoverTile;
             otherTile = hoverTileTP;
@@ -40,16 +37,16 @@ public class HighlightTile : MonoBehaviour
             otherTile = hoverTile;
         }
 
-        if (hoverMap.GetTile(mousePosition) != null && hoverMap.GetTile(mousePosition).name == otherTile.name)
+        if (hoverMap.GetTile(mousePositionInt) != null && hoverMap.GetTile(mousePositionInt).name == otherTile.name)
         {
-            hoverMap.SetTile(mousePosition, tileToSet);
+            hoverMap.SetTile(mousePositionInt, tileToSet);
         }
 
-        if (!Equals(mousePosition, previousMousePosition))
+        if (!Equals(mousePositionInt, previousMousePosition))
         {
             hoverMap.SetTile(previousMousePosition, null);
-            hoverMap.SetTile(mousePosition, tileToSet);
-            previousMousePosition = mousePosition;
+            hoverMap.SetTile(mousePositionInt, tileToSet);
+            previousMousePosition = mousePositionInt;
         }
     }
 }
