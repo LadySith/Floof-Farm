@@ -17,7 +17,7 @@ public class SpawnGrowthItem : MonoBehaviour
         if (Random.Range(-5000, 5000) == 50){
             GameObject growthItem = Instantiate(item) as GameObject;
             growthItem.transform.SetParent(GameObject.Find("Forest").transform, false);
-            growthItem.transform.position = new Vector2(Random.Range(-6, 6), Random.Range(-3, -1));
+            growthItem.transform.position = new Vector2(Random.Range(-6.0f, 6.0f), Random.Range(-3.0f, -1.0f));
         }
     }
 }
