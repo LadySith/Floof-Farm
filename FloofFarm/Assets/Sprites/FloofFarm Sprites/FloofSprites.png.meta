@@ -41,6 +41,9 @@ TextureImporter:
   - first:
       213: -6949692799361727831
     second: MailBox
+  - first:
+      213: 339255618028060360
+    second: House
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -432,6 +435,27 @@ TextureImporter:
       bones: []
       spriteID: 9a244f3583bbd8f90800000000000000
       internalID: -6949692799361727831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: House
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 160
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce3e98ef2745b400800000000000000
+      internalID: 339255618028060360
       vertices: []
       indices: 
       edges: []
