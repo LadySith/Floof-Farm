@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class Collectible : MonoBehaviour
 {
     public CollectibleType type;
+    public FloofType floofType;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,4 +32,9 @@ public class Collectible : MonoBehaviour
 public enum CollectibleType
 {
     NONE, DEWDROP, SEED, FLOOF
+}
+
+public enum FloofType
+{
+    NONE, BUNNYTAIL, CATSPJS, FOXTAIL
 }

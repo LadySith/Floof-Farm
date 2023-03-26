@@ -7,7 +7,7 @@ public class InventoryMenu : MonoBehaviour
 {
 
     public Player player;
-    
+
     void Start()
     {
         
