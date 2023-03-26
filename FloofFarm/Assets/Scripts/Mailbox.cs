@@ -15,32 +15,32 @@ public class Mailbox : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
-
-        if (player.itemsHeld.Count > 0 && player.itemsHeld[player.selectedItem] && player.itemsHeld[player.selectedItem].floofType == FloofType.BUNNYTAIL && (GameManager.instance.mousePosition - player.transform.position).magnitude < player.actionRadius)
+        if (player.canReach && player.itemsHeld.Count > 0 && player.selectedItem < player.itemsHeld.Count)
         {
-            print("Delivered Bunny With CottonBall!");
-            player.itemsHeld.RemoveAt(player.selectedItem);
-            deliveredBunny = true;
-            StartCoroutine(postCardDelivery());
+            if (player.itemsHeld[player.selectedItem].floofType == FloofType.BUNNYTAIL)
+            {
+                print("Delivered Bunny With CottonBall!");
+                player.itemsHeld.RemoveAt(player.selectedItem);
+                deliveredBunny = true;
+                StartCoroutine(postCardDelivery());
+            }
+
+            else if (player.itemsHeld[player.selectedItem].floofType == FloofType.CATSPJS)
+            {
+                print("Delivered Cat In PJs!");
+                player.itemsHeld.RemoveAt(player.selectedItem);
+                deliveredCat = true;
+                StartCoroutine(postCardDelivery());
+            }
+
+            else if (player.itemsHeld[player.selectedItem].floofType == FloofType.FOXTAIL)
+            {
+                print("Delivered Fox With Fluffy Tail!");
+                player.itemsHeld.RemoveAt(player.selectedItem);
+                deliveredFox = true;
+                StartCoroutine(postCardDelivery());
+            }
         }
-
-        if (player.itemsHeld.Count > 0 && player.itemsHeld[player.selectedItem] && player.itemsHeld[player.selectedItem].floofType == FloofType.CATSPJS && (GameManager.instance.mousePosition - player.transform.position).magnitude < player.actionRadius)
-        {
-            print("Delivered Cat In PJs!");
-            player.itemsHeld.RemoveAt(player.selectedItem);
-            deliveredCat = true;
-            StartCoroutine(postCardDelivery());
-        }
-
-        if (player.itemsHeld.Count > 0 && player.itemsHeld[player.selectedItem] && player.itemsHeld[player.selectedItem].floofType == FloofType.FOXTAIL && (GameManager.instance.mousePosition - player.transform.position).magnitude < player.actionRadius)
-        {
-            print("Delivered Fox With Fluffy Tail!");
-            player.itemsHeld.RemoveAt(player.selectedItem);
-            deliveredFox = true;
-            StartCoroutine(postCardDelivery());
-        }
-
-
     }
 
 
