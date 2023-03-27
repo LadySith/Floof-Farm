@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class SpawnGrowthItem : MonoBehaviour
 {
-    public GameObject item;
+    public List<GameObject> items = new List<GameObject>();
 
     public float spawnInterval = 15.0f;
+    public float intervalMin = 10.0f;
+    public float intervalMax = 30.0f;
 
     float timeSinceSpawn = 0.0f;
     int randomPosition;
+    int randomItem;
     
     void Start()
     {
@@ -21,7 +24,9 @@ public class SpawnGrowthItem : MonoBehaviour
     {
         timeSinceSpawn += Time.deltaTime;
         if (timeSinceSpawn >= spawnInterval){
-            GameObject growthItem = Instantiate(item) as GameObject;
+            randomItem = Random.Range(0, items.Count);
+
+            GameObject growthItem = Instantiate(items[randomItem]) as GameObject;
             growthItem.transform.SetParent(GameObject.Find("Forest").transform, false);
 
             randomPosition = Random.Range(0, transform.childCount);
@@ -32,7 +37,7 @@ public class SpawnGrowthItem : MonoBehaviour
                 }
             }
 
-            spawnInterval = Random.Range(10.0f, 30.0f);
+            spawnInterval = Random.Range(intervalMin, intervalMax);
             timeSinceSpawn = 0.0f;
         }
     }

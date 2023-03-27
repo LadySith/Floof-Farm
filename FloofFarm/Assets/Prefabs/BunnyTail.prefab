@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  floofType: 0
+  floofType: 1
   growthStage: 0
   growthSprites:
   - {fileID: 5194746221464521313, guid: 667d1c223aa5f0a4d90523fb9db15f65, type: 3}

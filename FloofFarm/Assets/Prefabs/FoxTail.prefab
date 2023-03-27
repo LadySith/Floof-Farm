@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2866062834915600010}
   - component: {fileID: 2866062834915600011}
   m_Layer: 0
-  m_Name: Foxtail
+  m_Name: FoxTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,11 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  sproutTile: {fileID: 0}
-  seedlingTile: {fileID: 0}
-  plantTile: {fileID: 0}
-  floofTile: {fileID: 0}
-  floofType: 2
+  floofType: 3
   growthStage: 0
   growthSprites:
   - {fileID: 1969775456026683473, guid: 667d1c223aa5f0a4d90523fb9db15f65, type: 3}
