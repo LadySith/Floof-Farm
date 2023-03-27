@@ -5,12 +5,12 @@ using UnityEngine;
 public class Mailbox : MonoBehaviour
 {
     public Player player;
-    public SpriteRenderer mail;
+    public GameObject mail;
 
 
-    bool deliveredBunny = false;
-    bool deliveredCat = false;
-    bool deliveredFox = false;
+    public bool deliveredBunny = false;
+    public bool deliveredCat = false;
+    public bool deliveredFox = false;
 
     // Update is called once per frame
     void OnMouseDown()
@@ -49,13 +49,13 @@ public class Mailbox : MonoBehaviour
         if (deliveredBunny == true || deliveredCat == true || deliveredFox == true)
         {
             yield return new WaitForSeconds(5f);
-            mail.enabled = true;
+            mail.SetActive(true);
             print("Postcard!");
         }
 
         else
         {
-            mail.enabled = false;
+            mail.SetActive(false);
         }
     }
 
