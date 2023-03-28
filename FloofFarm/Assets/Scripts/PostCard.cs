@@ -35,20 +35,22 @@ public class PostCard : MonoBehaviour
 
 
         //Hides Postcard on click (only works if you click the on mailbox collider for now
+        //Permanently destroys the images in the scene. Using this as a quick workaround for it to stop activating to give room to other postcards.
         else if (fox.enabled == true)
         {
-            fox.enabled = false;
+            Destroy(fox);
         }
 
         else if (cat.enabled == true)
         {
-            cat.enabled = false;
+            Destroy(cat);
         }
 
         else if (bunny.enabled == true)
         {
-            bunny.enabled = false;
+            Destroy(bunny);
         }
+
 
     }
 

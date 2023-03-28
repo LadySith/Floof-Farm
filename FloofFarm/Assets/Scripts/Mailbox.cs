@@ -7,7 +7,6 @@ public class Mailbox : MonoBehaviour
     public Player player;
     public GameObject mail;
 
-
     public bool deliveredBunny = false;
     public bool deliveredCat = false;
     public bool deliveredFox = false;
@@ -15,7 +14,7 @@ public class Mailbox : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
-        if (player.canReach && player.itemsHeld.Count > 0 && player.selectedItem < player.itemsHeld.Count)
+        if (player.canReach && player.itemsHeld.Count > 0 && player.selectedItem < player.itemsHeld.Count && player.itemsHeld[player.selectedItem].type == CollectibleType.FLOOF)
         {
             if (player.itemsHeld[player.selectedItem].floofType == FloofType.BUNNYTAIL)
             {
