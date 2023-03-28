@@ -5,7 +5,6 @@ using UnityEngine;
 public class Floof : Collectible
 {
     
-    public int growthStage;
     public Sprite[] growthSprites = new Sprite[4]; //For growthSprites[x], 0 = sprout, 1 = seedling, 2 = plant, 3 = floof
     private Player player;
     private bool growing;

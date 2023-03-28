@@ -16,9 +16,11 @@ public class Mailbox : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
+        
+
         if (player.canReach && player.itemsHeld.Count > 0 && player.selectedItem < player.itemsHeld.Count)
         {
-            if (player.itemsHeld[player.selectedItem].floofType == FloofType.BUNNYTAIL)
+            if (player.itemsHeld[player.selectedItem].floofType == FloofType.BUNNYTAIL && player.itemsHeld[player.selectedItem].growthStage == 3)
             {
                 print("Delivered Bunny With CottonBall!");
                 player.itemsHeld.RemoveAt(player.selectedItem);
@@ -26,7 +28,7 @@ public class Mailbox : MonoBehaviour
                 StartCoroutine(postCardDelivery());
             }
 
-            else if (player.itemsHeld[player.selectedItem].floofType == FloofType.CATSPJS)
+            else if (player.itemsHeld[player.selectedItem].floofType == FloofType.CATSPJS && player.itemsHeld[player.selectedItem].growthStage == 3)
             {
                 print("Delivered Cat In PJs!");
                 player.itemsHeld.RemoveAt(player.selectedItem);
@@ -34,7 +36,7 @@ public class Mailbox : MonoBehaviour
                 StartCoroutine(postCardDelivery());
             }
 
-            else if (player.itemsHeld[player.selectedItem].floofType == FloofType.FOXTAIL)
+            else if (player.itemsHeld[player.selectedItem].floofType == FloofType.FOXTAIL && player.itemsHeld[player.selectedItem].growthStage == 3)
             {
                 print("Delivered Fox With Fluffy Tail!");
                 player.itemsHeld.RemoveAt(player.selectedItem);

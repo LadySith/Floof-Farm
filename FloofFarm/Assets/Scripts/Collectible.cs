@@ -7,6 +7,7 @@ public class Collectible : MonoBehaviour
 {
     public CollectibleType type;
     public FloofType floofType;
+    public int growthStage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

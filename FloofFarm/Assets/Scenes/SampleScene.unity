@@ -14470,7 +14470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 206558999}
   mail: {fileID: 1423957550}
-  floof: {fileID: 0}
+  floof: {fileID: 1855104307}
   deliveredBunny: 0
   deliveredCat: 0
   deliveredFox: 0
@@ -15381,6 +15381,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6292eb454e254e14aadccde7a55a32ef, type: 3}
+--- !u!1 &1855104307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2866062834915600012, guid: 6292eb454e254e14aadccde7a55a32ef, type: 3}
+  m_PrefabInstance: {fileID: 1855104306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1895844147 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4883951581843773989, guid: 4bfbfe1529a632e4ea0b6dee01b31797, type: 3}
