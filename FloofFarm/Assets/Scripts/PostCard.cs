@@ -7,6 +7,7 @@ public class PostCard : MonoBehaviour
 {
     public Player player;
     public Mailbox mailbox;
+    public AudioSource page;
 
     public Image bunny;
     public Image cat;
@@ -19,18 +20,21 @@ public class PostCard : MonoBehaviour
         if (player.canReach && mailbox.deliveredBunny)
         {
             bunny.enabled = true;
+            page.Play();
             
         }
 
         else if (player.canReach && mailbox.deliveredCat)
         {
                 cat.enabled = true;
+            page.Play();
         }
 
 
         else if (player.canReach && mailbox.deliveredFox)
         {
             fox.enabled = true;
+            page.Play();
         }
 
 
@@ -39,16 +43,19 @@ public class PostCard : MonoBehaviour
         else if (fox.enabled == true)
         {
             Destroy(fox);
+            page.Play();
         }
 
         else if (cat.enabled == true)
         {
             Destroy(cat);
+            page.Play();
         }
 
         else if (bunny.enabled == true)
         {
             Destroy(bunny);
+            page.Play();
         }
 
 
