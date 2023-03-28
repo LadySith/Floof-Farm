@@ -272,7 +272,7 @@ RectTransform:
   m_GameObject: {fileID: 101506036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.5216, y: 7.5216, z: 7.5216}
+  m_LocalScale: {x: 12.2226, y: 7.5216, z: 7.5216}
   m_Children: []
   m_Father: {fileID: 618244087}
   m_RootOrder: 3
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7734563083478509395, guid: 667d1c223aa5f0a4d90523fb9db15f65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abb0c8a0f914a7941b898e6f73875733, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2723,6 +2723,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 890eee176b2d530479c70b289b2299aa, type: 3}
+--- !u!82 &738993655 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 678544102918758557, guid: e94999033c30d724ba4636bd76a9b8b9, type: 3}
+  m_PrefabInstance: {fileID: 306249079380987420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &740413283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13879,7 +13884,7 @@ RectTransform:
   m_GameObject: {fileID: 1055646308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.5216, y: 7.5216, z: 7.5216}
+  m_LocalScale: {x: 12.2226, y: 7.5216, z: 7.5216}
   m_Children: []
   m_Father: {fileID: 618244087}
   m_RootOrder: 1
@@ -13909,7 +13914,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2137310462283089201, guid: 667d1c223aa5f0a4d90523fb9db15f65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 132c13533b29eac4785976aee3e8fa59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14465,6 +14470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 206558999}
   mail: {fileID: 1423957550}
+  floof: {fileID: 0}
   deliveredBunny: 0
   deliveredCat: 0
   deliveredFox: 0
@@ -15417,7 +15423,7 @@ RectTransform:
   m_GameObject: {fileID: 1921625840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.5216, y: 7.5216, z: 7.5216}
+  m_LocalScale: {x: 12.2226, y: 7.5216, z: 7.5216}
   m_Children: []
   m_Father: {fileID: 618244087}
   m_RootOrder: 2
@@ -15447,7 +15453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3663713769073686835, guid: 667d1c223aa5f0a4d90523fb9db15f65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3cb6a6264f51c9f46973df5446cea082, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15848,6 +15854,10 @@ PrefabInstance:
       propertyPath: fox
       value: 
       objectReference: {fileID: 101506038}
+    - target: {fileID: 3698618970959687273, guid: e94999033c30d724ba4636bd76a9b8b9, type: 3}
+      propertyPath: page
+      value: 
+      objectReference: {fileID: 738993655}
     - target: {fileID: 3698618970959687273, guid: e94999033c30d724ba4636bd76a9b8b9, type: 3}
       propertyPath: bunny
       value: 
