@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Selected item = " + player.selectedItem);
+
             if (tileManager.IsInteractable(mousePosInt) && player.canReach && player.selectedItem < player.itemsHeld.Count)
             {
                 Collectible item = player.itemsHeld[player.selectedItem];
@@ -51,5 +53,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
 }

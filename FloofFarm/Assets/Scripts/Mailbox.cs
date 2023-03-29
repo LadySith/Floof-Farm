@@ -1,22 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mailbox : MonoBehaviour
 {
     public Player player;
-    public GameObject mail;
-    public GameObject floof;
-
+    public GameObject mailIcon;
+    public Image[] postcards = new Image[3]; //postcards[x], 0 = bunny, 1 = cat, 2 = fox
+    public List<Mail> mail = new List<Mail>();
+    public GameObject mailMenu;
+    public int currentMail = 0;
+    public Image currentImage;
 
     public bool deliveredBunny = false;
     public bool deliveredCat = false;
     public bool deliveredFox = false;
 
+    private void Awake()
+    {
+        if (mail[currentMail].image != null)
+        {
+            currentImage.sprite = mail[currentMail].image;
+        } else
+        {
+            currentImage.sprite = null;
+        }
+    }
+
+    private void Update()
+    {
+        if (currentMail >= mail.Count)
+        {
+            currentMail = mail.Count;
+        }
+
+        if (currentMail < 0)
+        {
+            currentMail = 0;
+        }
+    }
+
     // Update is called once per frame
     void OnMouseDown()
     {
-        
+        OpenMail();
 
         if (player.canReach && player.itemsHeld.Count > 0 && player.selectedItem < player.itemsHeld.Count)
         {
@@ -52,15 +80,44 @@ public class Mailbox : MonoBehaviour
         if (deliveredBunny == true || deliveredCat == true || deliveredFox == true)
         {
             yield return new WaitForSeconds(5f);
-            mail.SetActive(true);
+            mailIcon.SetActive(true);
             print("Postcard!");
         }
 
         else
         {
-            mail.SetActive(false);
+            mailIcon.SetActive(false);
         }
     }
 
+    public void OpenMail()
+    {
+        Time.timeScale = 0;
+        mailMenu.SetActive(true);
+    }
+
+    public void CloseMail()
+    {
+        mailMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+    public void Previous()
+    {
+        if (currentMail > 0)
+        {
+            currentMail--;
+            currentImage.sprite = mail[currentMail].image;
+        }
+    }
+
+    public void Next()
+    {
+        if (currentMail < mail.Count - 1)
+        {
+            currentMail++;
+            currentImage.sprite = mail[currentMail].image;
+        }
+        
+    }
     
 }
