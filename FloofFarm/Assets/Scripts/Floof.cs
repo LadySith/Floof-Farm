@@ -9,6 +9,7 @@ public class Floof : Collectible
     private Player player;
     private bool growing;
 
+    private SoundHandler sh;
     private SpriteRenderer rend;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class Floof : Collectible
         rend.sprite = growthSprites[growthStage];
         player = GameManager.instance.player;
         growing = false;
+        sh = player.GetComponent<SoundHandler>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class Floof : Collectible
                     player.itemsHeld.RemoveAt(player.selectedItem);
                     StartCoroutine(growFloof());
                     growing = true;
+                    sh.PlayDewDrop();
                 }
             }
 
@@ -78,6 +81,7 @@ public class Floof : Collectible
         player.itemsHeld.Add(this);
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         GetComponent<Collider2D>().enabled = false;
+        sh.PlaySqueak();
     }
 }
 
