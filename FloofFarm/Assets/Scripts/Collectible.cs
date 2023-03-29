@@ -9,9 +9,12 @@ public class Collectible : MonoBehaviour
     public FloofType floofType;
     public int growthStage;
 
+    private SoundHandler sh;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponent<Player>();
+        sh = player.GetComponent<SoundHandler>();
 
         if (player && player.itemsHeld.Count < player.maxItems && type != CollectibleType.FLOOF)
         {
@@ -23,6 +26,12 @@ public class Collectible : MonoBehaviour
             {
                 type = CollectibleType.FLOOF;
             }
+
+            if (type == CollectibleType.DEWDROP)
+            {
+                sh.PlayDewDrop2();
+            }
+
         }
     }
 

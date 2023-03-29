@@ -12,6 +12,7 @@ public class Mailbox : MonoBehaviour
     public GameObject mailMenu;
     public int currentMail = 0;
     public Image currentImage;
+    private SoundHandler sh;
 
     public bool deliveredBunny = false;
     public bool deliveredCat = false;
@@ -26,6 +27,8 @@ public class Mailbox : MonoBehaviour
         {
             currentImage.sprite = null;
         }
+
+        sh = player.GetComponent<SoundHandler>();
     }
 
     private void Update()
@@ -40,6 +43,8 @@ public class Mailbox : MonoBehaviour
             currentMail = 0;
         }
     }
+
+
 
     // Update is called once per frame
     void OnMouseDown()
@@ -81,6 +86,7 @@ public class Mailbox : MonoBehaviour
         {
             yield return new WaitForSeconds(5f);
             mailIcon.SetActive(true);
+            sh.PlayBell();
             print("Postcard!");
         }
 
@@ -117,7 +123,7 @@ public class Mailbox : MonoBehaviour
             currentMail++;
             currentImage.sprite = mail[currentMail].image;
         }
-        
+
     }
-    
+
 }
