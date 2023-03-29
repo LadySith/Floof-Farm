@@ -13,6 +13,16 @@ public class Mailbox : MonoBehaviour
     public bool deliveredCat = false;
     public bool deliveredFox = false;
 
+    private SoundHandler sh;
+
+    private void Start()
+    {
+        sh = player.GetComponent<SoundHandler>();
+
+    }
+
+
+
     // Update is called once per frame
     void OnMouseDown()
     {
@@ -53,6 +63,7 @@ public class Mailbox : MonoBehaviour
         {
             yield return new WaitForSeconds(5f);
             mail.SetActive(true);
+            sh.PlayBell();
             print("Postcard!");
         }
 
