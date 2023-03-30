@@ -43,6 +43,8 @@ public class Mailbox : MonoBehaviour
         }
 
         sh = player.GetComponent<SoundHandler>();
+
+        StartCoroutine(letterFromMayor());
     }
 
     private void Update()
@@ -89,6 +91,16 @@ public class Mailbox : MonoBehaviour
 
             else
             {
+                currentMail = mail.Count - 1;
+                OpenMail();
+            }
+        }
+
+        else
+        {
+            if (player.canReach)
+            {
+                currentMail = mail.Count - 1;
                 OpenMail();
             }
         }
@@ -142,23 +154,6 @@ public class Mailbox : MonoBehaviour
         }
     }
 
-
-    IEnumerator postCardDelivery()
-    {
-        if (deliveredBunny == true || deliveredCat == true || deliveredFox == true)
-        {
-            yield return new WaitForSeconds(5f);
-            mailIcon.SetActive(true);
-            sh.PlayBell();
-            print("Postcard!");
-        }
-
-        else
-        {
-            mailIcon.SetActive(false);
-        }
-    }
-
     public void OpenMail()
     {
         Time.timeScale = 0;
@@ -177,6 +172,7 @@ public class Mailbox : MonoBehaviour
     public void CloseMail()
     {
         mailMenu.SetActive(false);
+        mailIcon.SetActive(false);
         Time.timeScale = 1;
     }
     public void Previous()
@@ -200,6 +196,11 @@ public class Mailbox : MonoBehaviour
 
     }
 
-    
+    IEnumerator letterFromMayor()
+    {
+        yield return new WaitForSeconds(5f);
+        mailIcon.SetActive(true);
+        sh.PlayBell();
+    }
 
 }
