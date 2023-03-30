@@ -12,7 +12,16 @@ public class Mail : MonoBehaviour
     void Start()
     {
         rend = this.GetComponent<SpriteRenderer>();
-        rend.sprite = image;
+        if (image == null)
+        {
+            rend.enabled = false;
+        }
+        else
+        {
+            rend.sprite = image;
+            rend.enabled = true;
+        }
+        
     }
 
     // Update is called once per frame

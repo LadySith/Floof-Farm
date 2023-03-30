@@ -96,4 +96,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  rend: {fileID: 2978997691975005246}
+  rend: {fileID: 0}

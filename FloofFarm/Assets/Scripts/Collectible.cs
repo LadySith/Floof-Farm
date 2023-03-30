@@ -9,7 +9,7 @@ public class Collectible : MonoBehaviour
     public FloofType floofType;
     public int growthStage;
 
-    public SoundHandler sh;
+    private SoundHandler sh;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
