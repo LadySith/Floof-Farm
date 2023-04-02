@@ -11,6 +11,7 @@ public class SoundHandler : MonoBehaviour
     private AudioSource dewDrop2;
     private AudioSource squeak;
     private AudioSource bell;
+    private AudioSource page;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class SoundHandler : MonoBehaviour
         dewDrop2 = mySounds[2];
         squeak = mySounds[3];
         bell = mySounds[4];
+        page = mySounds[5];
     }
 
     public void PlayDewDrop()
@@ -47,5 +49,9 @@ public class SoundHandler : MonoBehaviour
     public void PlayBell()
     {
         bell.Play();
+    }
+    public void PlayPage()
+    {
+        page.Play();
     }
 }
