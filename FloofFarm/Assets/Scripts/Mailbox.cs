@@ -114,11 +114,12 @@ public class Mailbox : MonoBehaviour
 
         if (floof.floofType == FloofType.BUNNYTAIL)
         {
+            yield return new WaitForSeconds(5f);
+
             Mail newMail = Instantiate(mailPrefab, new Vector3(0, 0, 20), Quaternion.identity);
             newMail.image = postcards[0];
             newMail.rend.enabled = false;
             mail.Add(newMail);
-            yield return new WaitForSeconds(5f);
             
             mailIcon.SetActive(true);
             sh.PlayBell();
@@ -127,11 +128,12 @@ public class Mailbox : MonoBehaviour
 
         else if (floof.floofType == FloofType.CATSPJS)
         {
+            yield return new WaitForSeconds(5f);
+
             Mail newMail = Instantiate(mailPrefab, new Vector3(0, 0, 20), Quaternion.identity);
             newMail.image = postcards[1];
             newMail.rend.enabled = false;
             mail.Add(newMail);
-            yield return new WaitForSeconds(5f);
             
             mailIcon.SetActive(true);
             sh.PlayBell();
@@ -140,11 +142,13 @@ public class Mailbox : MonoBehaviour
 
         else if (floof.floofType == FloofType.FOXTAIL)
         {
+            yield return new WaitForSeconds(5f);
+
             Mail newMail = Instantiate(mailPrefab, new Vector3(0, 0, 20), Quaternion.identity);
             newMail.image = postcards[2];
             newMail.rend.enabled = false;
             mail.Add(newMail);
-            yield return new WaitForSeconds(5f);
+            
             
             mailIcon.SetActive(true);
             sh.PlayBell();
@@ -201,7 +205,7 @@ public class Mailbox : MonoBehaviour
 
     IEnumerator letterFromMayor()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         mailIcon.SetActive(true);
         sh.PlayBell();
     }
