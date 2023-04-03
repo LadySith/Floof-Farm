@@ -71,6 +71,7 @@ public class Mailbox : MonoBehaviour
                 deliveredBunny = true;
                 StartCoroutine(deliverFloof(player.itemsHeld[player.selectedItem]));
                 player.itemsHeld.RemoveAt(player.selectedItem);
+                sh.PlaySqueak();
             }
 
             else if (player.itemsHeld[player.selectedItem].floofType == FloofType.CATSPJS && player.itemsHeld[player.selectedItem].growthStage == 3)
@@ -79,6 +80,7 @@ public class Mailbox : MonoBehaviour
                 deliveredCat = true;
                 StartCoroutine(deliverFloof(player.itemsHeld[player.selectedItem]));
                 player.itemsHeld.RemoveAt(player.selectedItem);
+                sh.PlaySqueak();
             }
 
             else if (player.itemsHeld[player.selectedItem].floofType == FloofType.FOXTAIL && player.itemsHeld[player.selectedItem].growthStage == 3)
@@ -87,6 +89,7 @@ public class Mailbox : MonoBehaviour
                 deliveredFox = true;
                 StartCoroutine(deliverFloof(player.itemsHeld[player.selectedItem]));
                 player.itemsHeld.RemoveAt(player.selectedItem);
+                sh.PlaySqueak();
             }
 
             else

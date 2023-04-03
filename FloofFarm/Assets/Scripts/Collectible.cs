@@ -25,6 +25,7 @@ public class Collectible : MonoBehaviour
             if (type == CollectibleType.SEED)
             {
                 type = CollectibleType.FLOOF;
+                sh.PlayStep();
             }
 
             if (type == CollectibleType.DEWDROP)
